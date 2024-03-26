@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ask your PDF</title>
+</head>
+<body>
+    <h1>Ask a question about your PDF</h1>
+    <form action="/ask" method="post">
+      <label for="question">Question:</label>
+        <input type="hidden" name="session_id" value="{{ session_id }}">
+        <input type="text" id="question" name="question" placeholder="Enter your question here">
+        <input type="submit" value="Ask">
+    </form>
+    {% if response %}
+    <h2>Answer:</h2>
+    <p>{{ response }}</p>
+    {% endif %}
+</body>
+
+
+</html>
